@@ -1,0 +1,361 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    
+    --navy-blue: #020085; /* usado nas cores azuis do site */
+    --machine-metal: #454545; /* usado no rodapé do site */ 
+    --brainstem-grey: #B4B4B4; /* cor cinza usado nos links */ 
+    --Spanish-Grey: #989898; /* cor dos titulos das seções */
+}
+html {  scroll-behavior: smooth; }
+
+* {  margin: 0;   padding: 0;   box-sizing: border-box;}
+
+/* propriedades globais onde se usa para mais de um elemento */
+/* retirar essas propriedades */
+.bg-img-card-destaque,
+.bg-img-exemple {
+    width: 196px;
+    height: 163px;
+    margin-bottom: 10px;
+    background-color: var(--navy-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.bg-img-exemple {    height: 212px;  width: 325px;  }
+
+/* reutilizando css para que os elementos tenha no maximo 1440px de largura */
+.container-header,
+.container-featured,
+.container-information {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+}
+/* lista com os links do header e do footer de navegação */
+.dropdowm,
+.list-nav-footer {
+    display: flex;
+    gap: 15px;
+    list-style: none;
+}
+/* style dor links de navegação do header e do footer ( nav bar do footer e do header ) */
+.dropdowm li,
+.list-nav-footer li a {
+    text-decoration: none;
+    color: var(--brainstem-grey);
+    font: 500 20px 'Poppins';
+    text-transform: uppercase;
+}
+/* links de telefone (Aparece na parte de cima do site */
+.container-nav-tel {
+    background-color: var(--navy-blue);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.card-nav-tel {
+    display: flex;
+    justify-content: flex-end;
+    max-width: 920px;
+    margin: 0 auto;
+    width: 75%;
+}
+.card-nav-tel a {
+    text-decoration: none;
+    color: white;
+    font: 600 16px 'Poppins';
+}
+.card-nav-tel a:nth-child(1) {    margin-right: 14px; }
+
+/* HEADER DA PAGINA COM IMAGEM E NAVEGAÇÃO DE LINKS ( Cabeçalho da pagina )*/
+.container-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 90px;
+    padding-block: 15px;
+}
+.card-nav-header {  align-self: flex-end; }
+
+/* Propriedades do btn navbar ( botão que abre o menu lateral )*/
+.btn-navbar-menu {
+    border: none;
+    background: none;
+    font-size: 30px;
+    font-weight: 700;
+    transform: rotate(90deg);
+}
+/* propriedades do Dropdowm e dos subs dropdowns */
+.dropdowm {   gap: 15px; }
+
+.dropdowm li:hover {   color: var(--machine-metal);}
+
+/* cancelo o hover da lista nas sub listas */
+.dropdowm-sub ul li:hover {  color: white;  }
+
+/* ao passar o mause por sima o sub dropdowm irá aparecer na tela ou a sub da sub dropdowm aparece*/
+.dropdowm li:hover .dropdowm-sub, .dropdowm-sub ul li:hover .dropdowm-sub2 {   display: block; }
+
+/* Ao passar o mause por sima da linha da lista ou da sub lista a imagem roda 180deg para mostrar pro usuário que abriu o dropdowm  */
+.dropdowm li:hover .dropdowm-arrow-img, .dropdowm-sub ul li:hover .sub-dropdowm-arrow-img {  
+    transform: rotate(180deg);
+}
+/* Sub Dropdowm Nav Bar header e sub dropdowm dentro de um sub dropdowm*/
+.dropdowm-sub, .dropdowm-sub2 {
+    position: absolute;
+    z-index: 7;
+    background: var(--navy-blue);
+    display: none;
+    padding: 7px 15px;
+}
+.dropdowm-sub ul {   display: block;   list-style: none;  }
+
+.dropdowm-sub ul li { font-size: 14px;   color: white;   padding-block: 5px;   }
+
+/* sub dropdowm dentro de um sub dropdowm */
+.dropdowm-sub2 { left: 110px;   width: 110px;  }
+
+.dropdowm-sub2 ul li {  font-size: 14px; }
+
+/* Seção de slider Foi usado uma LIB nivo-slider então só terá um seletor co muma propriedade de tamanho ( SLIDER )*/
+.slider-wrapper {
+    width: 893px;
+    margin: 0 auto;
+}
+
+/* bara de titulo do slider tirar ele como preferencia */
+/* seção informação possui uma imagem e uma lista */
+.container-information {
+    max-width: calc(220px * 4); /* Seguir o tamanho da seção Destaque para que fique na mesma medida ( INFORMATION ) */
+    display: flex; 
+    flex-flow: row wrap;
+    justify-content: space-between;   
+}
+/* textos Informativos */
+.information-title h2, .information-title p,.list-information{  color: var(--Spanish-Grey);}
+
+.information-title h2 {   font: 500 26px 'Poppins';   text-transform: uppercase;  }
+
+.information-title p {   font: 500 14px 'Poppins';  }
+
+.list-information {  font: 500 14px 'Poppins';   margin-block: 15px;  }
+
+.bg-img-exemple h3{ font: 600 25px 'Poppins';}
+
+.bg-img-exemple { color: var(--brainstem-grey); text-transform: uppercase;}
+
+.bg-img-exemple h3{  color: white;}
+
+.bg-img-exemple p{
+    font: 500 28px 'Poppins';
+    position: relative;
+    bottom: -50px;
+    
+}
+/* Seletores da seção ( BOX DESTAQUE ) */
+.container-featured {   max-width: calc(220px * 4);   margin: 0 auto;}
+
+.container-featured h2 {    font: 600 26px 'Poppins';    margin-block: 20px;  }
+
+.list-featured {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: row wrap;
+    gap: 30px;
+    list-style: none;
+}
+.list-featured li {   width: 196px; }
+
+.list-featured li a, .container-featured h2{    color: var(--Spanish-Grey);}
+
+/* Links da lista de destaques */
+.list-featured li a {   font: 500 13px 'Poppins';   text-decoration: none;  }
+
+.bg-img-card-destaque p{   
+    font: 500 20px 'Poppins'; 
+    color: var(--brainstem-grey);
+    position: relative;
+    bottom: 0px;
+}
+.bg-img-card-destaque h2{ color: white;}
+
+/* Footer do site ( RODAPÉ ) */
+/* O Seletor da lista com os links se encontra junto com o Seletor do header da lista linha 43 Parte do CSS GLOBAL */
+.container-footer {
+    margin-top: 20px;
+    background-color: var(--machine-metal);
+    display: flex;
+    flex-flow: column wrap;
+    gap: 40px;
+    align-items: center;
+    justify-content: center;
+    padding-block: 15px;
+}
+/* é o unico h2 do footer */
+.container-footer h2 {
+    font: 700 24px 'Poppins';
+    color: white;
+    margin-block: 30px;
+    text-transform: uppercase;
+}
+/* Responsivo Extra Small */
+@media(max-width: 480px) {
+
+    /* SELETOR GLOBAL */
+    .hidden {   display: none;    }
+
+    .bg-img-exemple {    width: 240px;   }
+
+    /* HEADER */
+    .card-nav-tel a {    font-size: 12px; }
+    /* Fazendo o menu Responsivo da verção mobile*/
+    .card-nav-header {
+        /* efeitos de posição */
+        position: absolute;
+        top: 140px;
+        z-index: 6;
+        /* efeitos de fundo */
+        background: white;
+        width: 90%;
+        border-radius: 10px;
+    }
+    .card-nav-header ul {
+        display: block;
+        text-align: center;
+        padding-block: 10px;
+    }
+    .card-nav-header ul li a {   display: block;    padding-block: 5px;  }
+
+    /* Responsivo Dropdaw Nav Bar header */
+    .dropdowm-sub {
+        position: relative;
+        z-index: 7;
+        background: var(--navy-blue);
+        display: none;
+        padding: 7px 15px;
+    }
+    .dropdowm-sub2 {   position: relative;   left: 0;   width: 100%;   }
+
+    /* lista do footer e do Dropdowm */
+    .dropdowm li,
+    .list-nav-footer li a {     font-size: 16px; }
+
+    /* SLIDER */
+    .slider-wrapper {     width: 100%;   }
+
+    /* INFORMATION */
+    .list-information {   font-size: 12px; }
+
+    .container-information div h2,
+    .container-featured h2 {    font-size: 20px; }
+
+  
+
+    /* BOX DESTAQUE */
+    .container-information {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .container-featured {   width: 100%;   }
+
+    .list-featured {      gap: 15px;  }
+    /* FOOTER */
+     /* Responsivo do rodapé */
+     .list-nav-footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    } 
+}
+/* Responsivo small screen */
+@media(min-width: 481px) and (max-width: 809px) {
+
+    /* SELETOR GLOBAL */
+    .hidden {  display: none;  }
+    /* HEADER */
+    .card-nav-tel a {  font-size: 14px;}
+
+    .container-header {   position: relative;  }
+
+     /* Fazendo o menu Responsivo da verção tablets */
+     .card-nav-header {
+        /* efeitos de posição */
+        position: absolute;
+        top: 90px;
+        z-index: 6;
+        /* efeitos de fundo */
+        background: white;
+        width: 80%;
+        border-radius: 10px;
+    }
+    .card-nav-header ul {   display: block;     text-align: center;    padding-block: 10px; }
+
+    .card-nav-header ul li a {  display: block;   padding-block: 5px; }
+
+    /* Responsivo Dropdaw Nav Bar header */
+    .dropdowm-sub {
+        position: relative;
+        z-index: 7;
+        background: var(--navy-blue);
+        display: none;
+        padding: 7px 15px;
+    }
+
+    .dropdowm-sub2 {  position: relative;   left: 0;   width: 100%;  }
+
+    /* SLIDER */
+    .slider-wrapper {     width: 100%;   }
+
+    /* INFORMATION */
+    .container-information {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    /* BOX DESTAQUE */
+    .container-featured {    width: calc(212px * 2);  }   
+}
+/* Responsivo tablet/laptops */
+@media(min-width: 810px) and (max-width: 998px) {
+
+    /* HEADER */
+    .card-btn-navbar {  display: none;  }
+
+    /* SLIDER */
+     .slider-wrapper {   width: 100%; }
+
+    /* BOX DESTAQUE */
+    .container-featured {  width: calc(202px * 4); }
+
+    .list-featured {   gap: 7px;  } 
+}
+/* Responsivo para lg nootbooks */
+@media(min-width: 999px) and (max-width: 1479px) {
+    /* HEADER */
+    .card-btn-navbar {   display: none;  }
+    /* FOOTER */
+    .dropdowm, .list-nav-footer{ gap: 35px;}
+}
+/* responsivo para telas desktop */
+@media(min-width: 1480px) and (max-width: 1700px) {
+
+    /* HEADER*/
+    .card-btn-navbar {   display: none;  }
+    /* FOOTER */
+    .dropdowm, .list-nav-footer{ gap: 35px;}
+}
+/* Responsivo para os demais dispositivos acima de 1700px */
+@media(min-width: 1701px) {
+
+    /* HEADER */
+    .card-btn-navbar {    display: none;  }
+
+    /* FOOTER */
+    .dropdowm, .list-nav-footer{ gap: 35px;}
+}
